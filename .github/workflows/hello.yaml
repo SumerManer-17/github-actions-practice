@@ -1,0 +1,27 @@
+name: My First GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print greeting
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Display current date
+        run: date
+
+      - name: Check repository
+        run: ls -la
